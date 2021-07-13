@@ -26,8 +26,9 @@ public class JobCircularController {
 	public String jobcircular(JobCircular jobCircular, Model model) {
 		
 		List<JobCategory> jobCategories = jobCategoryService.getJobCategories();
-		
+		List<JobCircular> jobCirculars = jobCircularService.getJobCirculars();
 		model.addAttribute("jobCategories", jobCategories);
+		model.addAttribute("jobCirculars", jobCirculars);
 		
 		return "/admin/jobcircularPage";
 		
