@@ -23,7 +23,7 @@ public class JobCircularController {
 	private JobCircularService jobCircularService;
 	
 	@RequestMapping("/admin/jobcircular")
-	public String jobcircular(Model model) {
+	public String jobcircular(JobCircular jobCircular, Model model) {
 		
 		List<JobCategory> jobCategories = jobCategoryService.getJobCategories();
 		
