@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:31:57 GMT -->
+<head th:replace="/admin/fragments.html :: header" />
+<body class="sidebar-dark">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav th:replace="/admin/fragments.html :: navbartop" />
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <!-- partial:partials/_sidebar.html -->
+         <div th:replace="/admin/fragments.html :: nav" />
+<!-- Custom Widget Start -->
+       <div class="content-wrapper">
+		<div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+              <ul class="nav nav-tabs" id="Demo-tab1" role="tablist">
+                  <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#allJobs" role="tab">All Jobs</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#newJobs" role="tab">New Job</a>
+                  </li>
+                  
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                  <div class="tab-pane pt-4 active" id="allJobs" role="tabpanel">
+                  <h2 class="card-title">All Job Circular</h2>
+                  <div class="table-responsive">
+                    <table class="table center-aligned-table">
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Job Name</th>
+                          <th>Category</th>
+                          <th>Salary</th>
+                          <th>Create Date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      	<tr th:unless="${#lists.isEmpty(msg)}">
+                      		<td colspan="6" th:text="${msg}"></td>
+                      	</tr>
+                        <tr class="" th:each="jobCircular : ${jobCirculars}">
+                          <td th:text="${jobCircularStat.count}">01</td>
+                          <td ><a th:href="@{/admin/jobcirculardetail/{id}(id=${jobCircular.idJobCircular})}" th:text="${jobCircular.jobName}"></a></td>
+                          <td th:text="${jobCircular.jobCategory.categoryName}">Regular</td>
+                          <td th:text="${jobCircular.salary}">35000.00</td>
+                          <td th:text="${jobCircular.publishDate}">12 May 2017</td>
+                          <td th:text="${jobCircular.status}">Active</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+                  <div class="tab-pane pt-4" id="newJobs" role="tabpanel">
+                          <h2 class="card-title">Create your job circular</h2>
+                          <form class="forms-sample" action="#" th:action="@{/admin/addJobCircular}" method="post" th:object="${jobCircular}">
+								<div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Job Category</label>
+                                  <div class="col-sm-8">
+                                    <div class="btn-group mb-1">
+                              			<select class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:field="*{jobCategory}">
+											<option class="dropdown-item" value="0">Choose One</option>
+											<option class="dropdown-item" th:each="jobCategory : ${jobCategories}" th:value="${jobCategory.idJobCategory}" th:text="${jobCategory.categoryName}"></option>
+                              			</select>
+                          			</div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Job Post Name</label>
+                                  <div class="col-sm-8">
+                                    <input type="text" aria-describedby="emailHelp2" placeholder="Enter your post name here" th:field="*{jobName}">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Vacancy</label>
+                                  <div class="col-sm-8">
+                                    <div class="btn-group mb-1">
+                              			
+                              			<select class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:field="*{vacancy}">
+											<option class="dropdown-item" value="0">0</option>
+											<option class="dropdown-item" value="1">1</option>
+											<option class="dropdown-item" value="2">2</option>	                              			
+											<option class="dropdown-item" value="3">3</option>
+											<option class="dropdown-item" value="4">4</option>	                              			
+											<option class="dropdown-item" value="5">5</option>
+											<option class="dropdown-item" value="6">6</option>	                              			
+											<option class="dropdown-item" value="7">7</option>
+											<option class="dropdown-item" value="8">8</option>	                              			
+                              			</select>
+                          			</div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleTextarea2" class="col-sm-4 col-form-label">Job Details</label>
+                                  <div class="col-sm-8">
+                                    <textarea class="form-control p-input" id="exampleTextarea2" rows="9" name="my_textarea" th:field="*{jobDetails}"></textarea>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Employment Status</label>
+                                  <div class="col-sm-8">
+                                    <div class="btn-group mb-1">
+                              			
+                              			<select class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:field="*{employmentStatus}">
+											<option class="dropdown-item" value="">Choose One</option>
+											<option class="dropdown-item" value="fulltime">Full Time</option>
+											<option class="dropdown-item" value="parttime">Part Time</option>
+											<option class="dropdown-item" value="contract">Contract</option>
+                              			</select>
+                          			</div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Educational Requirements</label>
+                                  <div class="col-sm-8">
+                                    <input type="text" aria-describedby="emailHelp2" placeholder="Enter your post name here" th:field="*{educationRequirement}">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleTextarea2" class="col-sm-4 col-form-label">Additional Requirements</label>
+                                  <div class="col-sm-8">
+                                    <textarea class="form-control p-input" id="exampleTextarea2" rows="9" name="my_textarea" th:field="*{additionalRequirement}"></textarea>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Workplace</label>
+                                  <div class="col-sm-8">
+                                    <div class="btn-group mb-1">
+                              			<select class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:field="*{workplace}">
+											<option class="dropdown-item" value="" >Choose One</option>
+											<option class="dropdown-item" value="fulltime">Work from home</option>
+											<option class="dropdown-item" value="parttime">Work at office</option>
+                              			</select>
+                          			</div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Job Location</label>
+                                  <div class="col-sm-8">
+                                    <div class="btn-group mb-1">
+                              			<select class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:field="*{jobLocation}">
+											<option class="dropdown-item" value="" >Choose One</option>
+											<option class="dropdown-item" value="fulltime">Dhaka</option>
+											<option class="dropdown-item" value="parttime">Chittagong</option>
+											<option class="dropdown-item" value="fulltime">Jessore</option>
+											<option class="dropdown-item" value="parttime">Sylhet</option>
+                              			</select>
+                          			</div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Salary</label>
+                                  <div class="col-sm-8">
+                                    <input type="text" aria-describedby="emailHelp2" placeholder="Enter your post name here" th:field="*{salary}">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="exampleInputEmail2" class="col-sm-4 col-form-label">Other benefits</label>
+                                  <div class="col-sm-8">
+                                    <input type="text" aria-describedby="emailHelp2" placeholder="Enter your post name here" th:field="*{othersBenefits}">
+                                  </div>
+                              </div>
+                              <button type="submit" class="btn btn-success mt-4">Submit</button>
+                          </form>
+                  </div>
+              </div>
+          </div>
+        
+              </div>
+            </div>
+          </div>
+		</div>
+        <!-- partial:partials/_footer.html -->
+		<footer th:replace="/admin/fragments.html :: footer" />
+        <!-- partial -->
+      </div>
+      <!-- row-offcanvas ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:32:50 GMT -->
+</html>

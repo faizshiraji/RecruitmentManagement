@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:31:57 GMT -->
+<head th:replace="/admin/fragments.html :: header" />
+
+<body class="sidebar-dark">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+        <div th:replace="/admin/fragments.html :: nav">
+        
+        </div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <div class="user-info">
+            <div class="profile">
+              <img src="http://via.placeholder.com/47x47" alt="">
+            </div>
+            <div class="details">
+              <p class="user-name">Faiz Shiraji</p>
+              <p class="designation">Developer</p>
+            </div>
+          </div>
+          <ul class="nav">
+            <!--main pages start-->
+            <li class="nav-item nav-category">
+              <span class="nav-link">Menu</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="mdi mdi-gauge menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/examPaper}">
+                <i class="mdi mdi-puzzle menu-icon"></i>
+                <span class="menu-title">Exam</span>
+                <span class="badge badge-danger badge-pill ml-auto">New</span>
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/jobcircular}">
+                <i class="mdi mdi-puzzle menu-icon"></i>
+                <span class="menu-title">Job Circular</span>
+                <span class="badge badge-danger badge-pill ml-auto">New</span>
+              </a>
+            </li>
+            <!--Apps end-->
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/logout}">
+                <i class="mdi mdi-file-document-box menu-icon"></i>
+                <span class="menu-title">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        
+
+<!-- Custom Widget Start -->
+       <div class="content-wrapper">
+		<div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title">Question 12: Your boss has asked you to setup 4 ESXi hosts to evaluate the new vSphere 5 release, which is the recommended install method to use in this situation?</h2>
+                  <div class="card-body">
+                  
+                  <div class="table-responsive">
+                    <table class="table center-aligned-table">
+
+                      <tr class="">
+                      <td>
+                        	<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="" checked>
+	                    A. Interactive Installation</td>
+                        </tr>
+                        <tr class="">
+                        <td>
+                        	<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="" checked>
+                        B. Scripted Installation</td>
+                        </tr>
+                        <tr class="">
+                        
+                        <td>
+                        	<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="" checked>
+                        C. vSphere Auto Deploy Installation</td>
+                        </tr>
+                        <tr class="">
+                        <td>
+                        	<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="" checked>
+                        D. Upgrade via VMware Update Manager</td>
+                        </tr>
+                        
+                    </table>
+
+                    </div>
+                    <div class="card-body">
+                    	<button type="button" class="btn btn-info float-left"><i class="fa fa-chevron-left"></i>Earlier</button>
+                    	<button type="button" class="btn btn-info float-right">Next <i class="fa fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+		</div>
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="float-right">
+                <a href="#">Salt Admin</a> &copy; 2017
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- row-offcanvas ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+  <script th:src="@{/node_modules/popper.js/dist/umd/popper.min.js}"></script>
+  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
+  <script th:src="@{/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script th:src="@{/node_modules/flot/jquery.flot.js}"></script>
+  <script th:src="@{/node_modules/flot/jquery.flot.resize.js}"></script>
+  <script th:src="@{/node_modules/flot/jquery.flot.categories.js}"></script>
+  <script th:src="@{/node_modules/flot/jquery.flot.pie.js}"></script>
+  <script th:src="@{/node_modules/rickshaw/vendor/d3.v3.js}"></script>
+  <script th:src="@{/node_modules/rickshaw/rickshaw.min.js}"></script>
+  <script th:src="@{/bower_components/chartist/dist/chartist.min.js}"></script>
+  <script th:src="@{/node_modules/chartist-plugin-legend/chartist-plugin-legend.js}"></script>
+  <script th:src="@{/node_modules/chart.js/dist/Chart.min.js}"></script>
+  <script th:src="@{/node_modules/jquery-sparkline/jquery.sparkline.min.js}"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{/js/off-canvas.js}"></script>
+  <script th:src="@{/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/js/misc.js}"></script>
+  <script th:src="@{/js/settings.js}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script th:src="@{/js/dashboard_1.js}"></script>
+  <!-- End custom js for this page-->
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:32:50 GMT -->
+</html>

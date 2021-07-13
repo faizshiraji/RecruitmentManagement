@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/samples/landing-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Salt Admin</title>
+  <!-- inject:css -->
+   <link rel="stylesheet" th:href="@{/node_modules/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css}">
+  <link rel="stylesheet" media="screen" th:href="@{/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/images/favicon.html}" />
+</head>
+
+<body class="sample-page">
+  <div class="landing-section">
+    <div class="container">
+    
+      <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper">
+        <a class="navbar-brand brand-logo" href="../../index.html"><img th:src="@{/images/salt_logo.svg}" alt="Logo"></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="btn-group d-none d-sm-block">
+          <button type="button" class="btn btn-secondary btn-sm text-muted border-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+        <form class="form-inline mt-2 ml-3 mt-md-0 d-none d-sm-block">
+          <div class="input-group solid">
+            <span class="input-group-addon"><i class="mdi mdi-magnify"></i></span>
+            <input type="text" class="form-control">
+          </div>
+        </form>
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell-outline"></i>
+              <span class="count bg-warning">7</span>
+            </a>
+            <div class="dropdown-menu navbar-dropdown notification-drop-down" aria-labelledby="notificationDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-birthday-cake text-success fa-fw"></i>
+                <span class="notification-text">Today is John's birthday</span>
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-phone text-danger fa-fw"></i>
+                <span class="notification-text">Call John Doe</span>
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-handshake-o text-primary fa-fw"></i>
+                <span class="notification-text">Meeting Alisa</span>
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-exclamation-triangle text-danger fa-fw"></i>
+                <span class="notification-text">Server space almost full</span>
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-bell text-warning fa-fw"></i>
+                <span class="notification-text">Payment Due</span>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-message-outline"></i>
+              <span class="count bg-danger">4</span>
+            </a>
+            <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-success">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">John Doe</p>
+                  <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
+                </div>
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-success">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">Leanne Jones</p>
+                  <p class="Sender-message">Can we schedule a call this afternoon?</p>
+                </div>
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-primary">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">Stella</p>
+                  <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
+                </div>
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-warning">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">James Brown</p>
+                  <p class="Sender-message">Need the updates of the project at the end of the week.</p>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item view-all">View all</a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+      <h1>Lorem Ipsum has been the industry's</h1>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever </p>
+      <div class="row d-flex justify-content-center">
+        <a href="#" class="btn btn-demo">Demo</a>
+        <a href="#" class="btn btn-buy">Buy</a>
+      </div>
+      <img src="http://via.placeholder.com/955x370" alt="">
+    </div>
+  </div>
+  <div class="content-section">
+    <div class="container">
+      <h2 class="features-heading">Amazing Features and Flexibility Provided</h2>
+      <h3 class="features-subheading">Almost Covers Everything</h3>
+      <div class="row features-tiles">
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+        <div class="tiles">
+          <img src="http://via.placeholder.com/80x80" alt="">
+          <p class="tile-title">Fully responsive</p>
+          <p class="tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sequi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="row">
+      <div class="col-lg-6 side-left">
+        <div class="wrapper">
+          <h2 class="layout-heading">Menu Layouts</h2>
+          <p class="layout-txt">Don’t go by our Words, checkout our awesome Layout demos and verify yourself.</p>
+          <p class="text-underlined">You will surely fall in love over the fresh design & brilliant code.</p>
+          <a class="view-more" href="#">View More..</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="http://via.placeholder.com/625x410" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="wrapper">
+      <h3>The Ultimate Bootstrap 4 Titan Admin Theme Trusted By World Wide</h3>
+      <div class="form-group">
+        <input type="text" placeholder="Enter you email to subscribe ">
+        <button type="submit">Submit</button>
+      </div>
+      <a class="buy-now" href="#">Buy Now</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>Copyright 2018. All Rights Titan Admin</p>
+        <a href="http://www.urbanui.com/" target="_blank">Design & Developed by Urban UI</a>
+      </div>
+    </div>
+  </div>
+  <script th:src="@{/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js}"></script>
+  <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+  <script th:src="@{/node_modules/popper.js/dist/umd/popper.min.js}"></script>
+  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/off-canvas.js}"></script>
+  <script th:src="@{/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/js/misc.js}"></script>
+  <script th:src="@{/js/settings.js}"></script>
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/samples/landing-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+</html>
