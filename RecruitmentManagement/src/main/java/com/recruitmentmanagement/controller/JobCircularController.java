@@ -1,10 +1,13 @@
 package com.recruitmentmanagement.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,6 +25,13 @@ public class JobCircularController {
 	@Autowired
 	private JobCircularService jobCircularService;
 	
+	@RequestMapping("/jobdetails")
+	public String jobDetails() {
+		
+		return "jobdetails";
+		
+	}
+	
 	@RequestMapping("/admin/jobcircular")
 	public String jobcircular(JobCircular jobCircular, Model model) {
 		
@@ -34,23 +44,32 @@ public class JobCircularController {
 		
 	}
 	
-	@RequestMapping("/jobdetails")
-	public String jobDetails() {
-		
-		return "jobdetails";
-		
-	}
-	
 	@RequestMapping(value = "/admin/addJobCircular", method = RequestMethod.POST)
 	public String addJobCircular(JobCircular jobCircular, Model model) {
 
 		List<JobCategory> jobCategories = jobCategoryService.getJobCategories();
+		List<JobCircular> jobCirculars = jobCircularService.getJobCirculars();
+		
+		jobCircular.setPublishDate(new Date());
+		jobCircular.setStatus("Draft");
 		
 		jobCircularService.addJobCircular(jobCircular);
+		model.addAttribute("jobCirculars", jobCirculars);
 		model.addAttribute("jobCategories", jobCategories);
 		System.out.println("JobCircular Added Successfully");
 		
 		return "/admin/jobcircularPage";
 	}
 	
+
+	@GetMapping("/admin/jobcirculardetail/{id}")
+	public String viewJobCircularDetailsInPvt(@PathVariable("id") Integer id, Model model) {
+		
+		JobCircular jobCircular = jobCircularService.getJobCircular(id);
+		
+		System.out.println(jobCircular);
+		model.addAttribute("jobCircular", jobCircular);
+		
+		return "/admin/viewjobcircularPage";
+	}
 }
