@@ -51,7 +51,7 @@
 			                                  </h5>
 			                              </div>
 			                              <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-			                                  <div class="card-body" th:text="${jobCircular.jobDetails}">
+			                                  <div class="card-body" th:utext="${jobCircular.jobDetails}">
 												    jobDetails
 			                                  </div>
 			                              </div>
@@ -105,7 +105,7 @@
 			                                  </h5>
 			                              </div>
 			                              <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
-			                                  <div class="card-body" th:text="${jobCircular.additionalRequirement}">
+			                                  <div class="card-body" th:utext="${jobCircular.additionalRequirement}">
 												    Age at most 30 years<br>
 												    Only males are allowed to apply.<br>
 												    Good knowledge of scripting skills (e.g., bash, php, sql, python)<br>
@@ -163,7 +163,7 @@
 			                                  </h5>
 			                              </div>
 			                              <div id="collapseNine" class="collapse show" role="tabpanel" aria-labelledby="headingNine">
-			                                  <div class="card-body" th:text="${jobCircular.otherBenefits}">
+			                                  <div class="card-body" th:text="${jobCircular.othersBenefits}">
 												    
 											    Mobile bill, Performance bonus, Weekly 2 holidays
 											    Festival Bonus: 2 (Yearly)

@@ -45,6 +45,7 @@ public class JobCircular {
 	
 	private String salary;
 	
+	@Column(name = "others_benefits")
 	private String othersBenefits;
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private java.util.Date publishDate;
