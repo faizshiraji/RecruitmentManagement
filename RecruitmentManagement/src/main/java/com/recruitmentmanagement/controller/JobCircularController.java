@@ -50,7 +50,7 @@ public class JobCircularController {
 		List<JobCategory> jobCategories = jobCategoryService.getJobCategories();
 		List<JobCircular> jobCirculars = jobCircularService.getJobCirculars();
 		
-		jobCircular.setPublishDate(new Date());
+//		jobCircular.setPublishDate(new Date());
 		jobCircular.setStatus("Draft");
 		
 		jobCircularService.addJobCircular(jobCircular);
@@ -71,5 +71,38 @@ public class JobCircularController {
 		model.addAttribute("jobCircular", jobCircular);
 		
 		return "/admin/viewjobcircularPage";
+	}
+	
+	@GetMapping("/admin/jobcircularDelete/{id}")
+	public String deleteJobCircular(@PathVariable("id") Integer id, Model model) {
+		jobCircularService.deleteJobCircular(id);
+		
+		String msg = "Selected Job Circular Removed successfully.";
+		
+		model.addAttribute("", msg);
+		
+		return "/admin/jobcircularPage";
+	}
+	
+	@GetMapping("/admin/jobcircularEdit/{id}")
+	public String editJobCircular(@PathVariable("id") Integer id, Model model) {
+		
+		jobCircularService.getJobCircular(id);
+		
+		
+		return "/admin/jobcircularPage";
+	}
+	
+	@GetMapping("/admin/jobcircularPublish/{id}")
+	public String publishJobCircular(@PathVariable("id") Integer id, Model model) {
+		JobCircular jobCircular = jobCircularService.getJobCircular(id);
+		jobCircular.setStatus("publish");
+		jobCircular.setPublishDate(new Date());
+		jobCircularService.updateJobCircular(jobCircular);
+		
+		model.addAttribute("jobCircular", jobCircular);
+		
+		return "/admin/viewjobcircularPage";
+		
 	}
 }

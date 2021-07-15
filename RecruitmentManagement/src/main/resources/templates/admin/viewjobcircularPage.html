@@ -31,7 +31,7 @@
 
               <!-- Tab panes -->
               <div class="tab-content">
-                  <div class="tab-pane pt-4 active" id="allJobs" role="tabpanel">
+              <div class="tab-pane pt-4 active" id="allJobs" role="tabpanel">
 		        <div class="card">
 		            <div class="card-body">
 		              	<h1 class="card-title" th:text="${jobCircular.jobName}">System Engineer</h1>
@@ -39,155 +39,58 @@
 			                <div class="col-12">
 			                  <div class="mt-4">
                     			<div class="faq-block card-body">
-			                      <div class="container-fluid py-2">
-			                        <p class="mb-0" th:text="${jobCircular.vacancy}">Vacancy: 2</p>
-			                      </div>
 			                      <div id="accordion" role="tablist" aria-multiselectable="true" class="accordion">
-			                              <div class="card-header" role="tab" id="headingOne">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-			                                      <i class="icon-arrow-down icon"></i>Job Responsibilities:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+			                      		<h5 class="mb-0"> Vacancy:</h5>
+					                      <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+					                      	<div class="card-body" th:text="${jobCircular.vacancy}">1</div>
+					                      </div>
+										<h5 class="mb-0"> Job Responsibilities:</h5>
 			                              <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-			                                  <div class="card-body" th:utext="${jobCircular.jobDetails}">
-												    jobDetails
-			                                  </div>
+			                                  <div class="card-body" th:utext="${jobCircular.jobDetails}">jobDetails</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingTwo">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-			                                      <i class="icon-arrow-down icon"></i>Employment Status:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+				                        <h5 class="mb-0">Employment Status:</h5>
 			                              <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
-			                                  <div class="card-body" th:text="${jobCircular.employmentStatus}">
-												   Full-time
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.employmentStatus}">Full-time</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingThree">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-			                                      <i class="icon-arrow-down icon"></i>Educational Requirements:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Educational Requirements:</h5>
 			                              <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
-			                                  <div class="card-body" th:text="${jobCircular.educationRequirement}">
-												   Bachelor of Science (BSc) in CSE
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.educationRequirement}">Bachelor of Science (BSc) in CSE</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingFour">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-			                                      <i class="icon-arrow-down icon"></i>Experience Requirements:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Experience Requirements:</h5>
 			                              <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
-			                                  <div class="card-body" th:text="${jobCircular.experienceRequirement}">
-												   	2 to 3 year(s)
-													The applicants should have experience in the following area(s):
-			    									Network Engineer/ Network Administrator, System Engineer (Computer Network & System)
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.experienceRequirement}">ExperienceRequirement</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingFive">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-			                                      <i class="icon-arrow-down icon"></i>Additional Requirements:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Additional Requirements:</h5>
 			                              <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
-			                                  <div class="card-body" th:utext="${jobCircular.additionalRequirement}">
-												    Age at most 30 years<br>
-												    Only males are allowed to apply.<br>
-												    Good knowledge of scripting skills (e.g., bash, php, sql, python)<br>
-												    Good knowledge of PHP language. Workable understanding of code and script<br>
-												    Problem-solving attitude and analytical skill<br>
-												    Very good team player and communication skill<br>
-												    Experience with automation/configuration management<br>
-			                                  </div>
+			                                  <div class="card-body" th:utext="${jobCircular.additionalRequirement}">Additional Requirement</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingSix">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-			                                      <i class="icon-arrow-down icon"></i>Workplace:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Workplace:</h5>
 			                              <div id="collapseSix" class="collapse show" role="tabpanel" aria-labelledby="headingSix">
-			                                  <div class="card-body" th:text="${jobCircular.workplace}">
-												    Work from home, Work at office
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.workplace}">Work from home, Work at office</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingSeven">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-			                                      <i class="icon-arrow-down icon"></i>Job Location:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+			                            <h5 class="mb-0">Job Location:</h5>
 			                              <div id="collapseSeven" class="collapse show" role="tabpanel" aria-labelledby="headingSeven">
-			                                  <div class="card-body" th:text="${jobCircular.jobLocation}">
-												    Dhaka
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.jobLocation}">Dhaka</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingEight">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-			                                      <i class="icon-arrow-down icon"></i>Salary:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Salary:</h5>
 			                              <div id="collapseEight" class="collapse show" role="tabpanel" aria-labelledby="headingEight">
-			                                  <div class="card-body" th:text="${jobCircular.salary}">
-												    Negotiable
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.salary}">Negotiable</div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingNine">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
-			                                      <i class="icon-arrow-down icon"></i>Compensation & other benefits:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Compensation & other benefits:</h5>
 			                              <div id="collapseNine" class="collapse show" role="tabpanel" aria-labelledby="headingNine">
-			                                  <div class="card-body" th:text="${jobCircular.othersBenefits}">
-												    
-											    Mobile bill, Performance bonus, Weekly 2 holidays
-											    Festival Bonus: 2 (Yearly)
-			
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.othersBenefits}"></div>
 			                              </div>
-			                              
-			                              <div class="card-header" role="tab" id="headingTen">
-			                                  <h5 class="mb-0">
-			                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-			                                      <i class="icon-arrow-down icon"></i>Published on:
-			                                      </a>
-			                                  </h5>
-			                              </div>
+										<h5 class="mb-0">Published on:</h5>
 			                              <div id="collapseTen" class="collapse show" role="tabpanel" aria-labelledby="headingTen">
-			                                  <div class="card-body" th:text="${jobCircular.publishDate}">
-												    
-												June 2, 2021 
-			
-			                                  </div>
+			                                  <div class="card-body" th:text="${jobCircular.publishDate}">June 2, 2021 </div>
 			                              </div>
-			                              <a class="btn btn-success mt-4" th:href="/admin/jobcircularEdit/{id}(id=${jobCircular.idJobCircular})">Modify</a>
-			                              <a class="btn btn-success mt-4" th:href="/admin/jobcircularDelete/{id}(id=${jobCircular.idJobCircular})">Delete</a>
-			                              <a class="btn btn-success mt-4" th:href="/admin/jobcircularPublish/{id}(id=${jobCircular.idJobCircular})">Publish</a>
+			                            <h5 class="mb-0">Status:</h5>
+			                              <div id="collapseTen" class="collapse show" role="tabpanel" aria-labelledby="headingTen">
+			                                  <div class="card-body" th:text="${jobCircular.status}">draft</div>
+			                              </div>
+			                              <a class="btn btn-info btn-fw" th:href="@{/admin/jobcircularDelete/{id}(id=${jobCircular.idJobCircular})}">Delete</a>
+			                              <a class="btn btn-dark btn-fw" th:href="@{/admin/jobcircularEdit/{id}(id=${jobCircular.idJobCircular})}">Modify</a>
+			                              <a class="btn btn-success btn-fw" th:href="@{/admin/jobcircularPublish/{id}(id=${jobCircular.idJobCircular})}">Publish</a>
 			                          </div>
 			                      </div>
 			                    </div>
@@ -195,8 +98,8 @@
 			    			</div>
 		   				</div>
 		  			</div>
-                  </div>
-                  <div class="tab-pane pt-4" id="newJobs" role="tabpanel">
+              </div>
+              <div class="tab-pane pt-4" id="newJobs" role="tabpanel">
                           <h2 class="card-title">Create your job circular</h2>
                           <form class="forms-sample" action="#" th:action="@{/admin/addJobCircular}" method="post" th:object="${jobCircular}">
 								<div class="form-group row">
