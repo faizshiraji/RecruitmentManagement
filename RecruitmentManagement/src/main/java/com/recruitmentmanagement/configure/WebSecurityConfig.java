@@ -57,7 +57,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.rememberMe()
 		.and()
 		.logout().permitAll();
-		
 	}
 	
 	@Bean

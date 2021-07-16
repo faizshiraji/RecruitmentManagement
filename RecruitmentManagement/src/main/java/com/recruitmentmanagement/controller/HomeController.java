@@ -76,6 +76,13 @@ public class HomeController {
 		return "/admin/home";
 	}
 	
+	@RequestMapping("/user/index")
+	public String LoginUser(Model model) {
+		
+		
+		return "/user/index";
+	}
+	
 	@RequestMapping("/login/error")
 	public String error() {
 		return "error-404";
