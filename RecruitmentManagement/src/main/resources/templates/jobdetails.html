@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Salt Admin</title>
+  <title>CloudWell Recruitment System</title>
   <!-- plugins:css -->
   <link rel="stylesheet" th:href="@{/node_modules/mdi/css/materialdesignicons.min.css}">
   <link rel="stylesheet" th:href="@{/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css}">
@@ -529,13 +529,13 @@
 	        <div class="content-wrapper">
 		        <div class="card">
 		            <div class="card-body">
-		              	<h1 class="card-title">System Engineer</h1>
+		              	<h1 class="card-title" th:text="${jobCircular.jobName}">System Engineer</h1>
 		              	<div class="row">
 			                <div class="col-12">
 			                  <div class="card mt-4">
                     <div class="faq-block card-body">
                       <div class="container-fluid py-2">
-                        <p class="mb-0">Vacancy: 2</p>
+                        <p class="mb-0" th:text="'Vacancy: ' + ${jobCircular.vacancy}">Vacancy: 2</p>
                       </div>
                       <div id="accordion" role="tablist" aria-multiselectable="true" class="accordion">
                           <div class="card">
@@ -547,31 +547,8 @@
                                   </h5>
                               </div>
                               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                  <div class="card-body">
-									    Clear concept about Networking and System administration. <br>
-									    Must have good knowledge about virtualization and containerization (e.g., ESXi, Vcenter,
-									    VMotion) <br>
-									    Installing, configuring, testing and maintaining operating systems, application software
-									    and system management tools, mail server (MS Exchange), AD(MS Active Directory and
-									    LDAP)<br>
-									    Must have good knowledge about network architecute and capable for planning and
-									    Designing.<br>
-									    Proactively ensure the highest levels of systems and infrastructure availability<br>
-									    Monitor and test application performance for potential bottlenecks, identify possible
-									    solutions, and work with developers to implement those fixes<br>
-									    Must have good knowledge about System Security (Iptalbes/firewall, selinux) and also
-									    have the network security<br>
-									    Write and maintain custom scripts to increase system efficiency and lower the human
-									    intervention time on any tasks<br>
-									    Provide 2nd and 3rd level support<br>
-									    Liaise with vendors and other IT personnel for problem resolution<br>
-									    Proven working experience in installing, configuring and troubleshooting UNIX /Linux
-									    based environments.<br>
-									    Solid experience in the administration and performance tuning of application stacks
-									    (e.g.,Tomcat, Apache, NGINX)<br>
-									    Managing and monitoring all installed systems and infrastructure<br>
-									    Experience with monitoring and Log systems<br>
-									    Solid networking knowledge (OSI network layers, TCP/IP)<br>
+                                  <div class="card-body" th:utext="${jobCircular.jobDetails}">
+									    Job Details
                                   </div>
                               </div>
                               
@@ -583,7 +560,7 @@
                                   </h5>
                               </div>
                               <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.employmentStatus}">
 									   Full-time
                                   </div>
                               </div>
@@ -596,7 +573,7 @@
                                   </h5>
                               </div>
                               <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.educationRequirement}">
 									   Bachelor of Science (BSc) in CSE
                                   </div>
                               </div>
@@ -609,10 +586,8 @@
                                   </h5>
                               </div>
                               <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.experienceRequirement}">
 									   	2 to 3 year(s)
-										The applicants should have experience in the following area(s):
-    									Network Engineer/ Network Administrator, System Engineer (Computer Network & System)
                                   </div>
                               </div>
                               
@@ -624,14 +599,8 @@
                                   </h5>
                               </div>
                               <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
-                                  <div class="card-body">
+                                  <div class="card-body" th:utext="${jobCircular.additionalRequirement}">
 									    Age at most 30 years<br>
-									    Only males are allowed to apply.<br>
-									    Good knowledge of scripting skills (e.g., bash, php, sql, python)<br>
-									    Good knowledge of PHP language. Workable understanding of code and script<br>
-									    Problem-solving attitude and analytical skill<br>
-									    Very good team player and communication skill<br>
-									    Experience with automation/configuration management<br>
                                   </div>
                               </div>
                               
@@ -643,7 +612,7 @@
                                   </h5>
                               </div>
                               <div id="collapseSix" class="collapse show" role="tabpanel" aria-labelledby="headingSix">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.workplace}">
 									    Work from home, Work at office
                                   </div>
                               </div>
@@ -656,7 +625,7 @@
                                   </h5>
                               </div>
                               <div id="collapseSeven" class="collapse show" role="tabpanel" aria-labelledby="headingSeven">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.jobLocation}">
 									    Dhaka
                                   </div>
                               </div>
@@ -669,7 +638,7 @@
                                   </h5>
                               </div>
                               <div id="collapseEight" class="collapse show" role="tabpanel" aria-labelledby="headingEight">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.salary}">
 									    Negotiable
                                   </div>
                               </div>
@@ -682,7 +651,7 @@
                                   </h5>
                               </div>
                               <div id="collapseNine" class="collapse show" role="tabpanel" aria-labelledby="headingNine">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${jobCircular.othersBenefits}">
 									    
 								    Mobile bill, Performance bonus, Weekly 2 holidays
 								    Festival Bonus: 2 (Yearly)
@@ -698,14 +667,14 @@
                                   </h5>
                               </div>
                               <div id="collapseTen" class="collapse show" role="tabpanel" aria-labelledby="headingTen">
-                                  <div class="card-body">
+                                  <div class="card-body" th:text="${#dates.format(jobCircular.publishDate, 'MMMM dd, yyyy')}">
 									    
 									June 2, 2021 
 
                                   </div>
                               </div>
                               
-                              <button type="submit" class="btn btn-success mt-4">Apply</button>
+                              <a class="btn btn-success btn-fw" th:href="@{/jobcircularApply/{id}(id=${jobCircular.idJobCircular})}">Apply</a>
                           </div>
                       </div>
                     </div>

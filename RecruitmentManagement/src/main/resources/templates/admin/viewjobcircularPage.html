@@ -80,7 +80,7 @@
 			                              </div>
 										<h5 class="mb-0">Published on:</h5>
 			                              <div id="collapseTen" class="collapse show" role="tabpanel" aria-labelledby="headingTen">
-			                                  <div class="card-body" th:text="${jobCircular.publishDate}">June 2, 2021 </div>
+			                                  <div class="card-body" th:text="${#dates.format(jobCircular.publishDate, 'MMMM dd, yyyy')}">June 2, 2021 </div>
 			                              </div>
 			                            <h5 class="mb-0">Status:</h5>
 			                              <div id="collapseTen" class="collapse show" role="tabpanel" aria-labelledby="headingTen">

@@ -25,11 +25,16 @@ public class JobCircularController {
 	@Autowired
 	private JobCircularService jobCircularService;
 	
-	@RequestMapping("/jobdetails")
-	public String jobDetails() {
+	
+	@GetMapping("/jobdetails/{id}")
+	public String viewJobCircularDetailsInPbl(@PathVariable("id") Integer id, Model model) {
+		
+		JobCircular jobCircular = jobCircularService.getJobCircular(id);
+		
+		System.out.println(jobCircular);
+		model.addAttribute("jobCircular", jobCircular);
 		
 		return "jobdetails";
-		
 	}
 	
 	@RequestMapping("/admin/jobcircular")
