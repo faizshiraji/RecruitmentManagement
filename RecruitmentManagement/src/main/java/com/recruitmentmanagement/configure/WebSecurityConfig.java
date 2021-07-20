@@ -25,38 +25,40 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private CustomUserDetailsService userDetailsService;
 	
+	@Autowired
+	private CustomLoginSuccessHandler successHandler;
+	
+	
+	
 	@Bean
 	public PasswordEncoder	passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 	
+	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 
 		httpSecurity
-		.csrf().disable()
-		.authorizeRequests().antMatchers("/admin/**").hasAuthority("USER")
-		.antMatchers("/registration", "/process_registration", "/userhome", "/landing", "/order", "/jobdetails/**").permitAll()
+		.authorizeRequests()
+		.antMatchers("/","/login","/registration", "/process_registration", "/userhome", "/landing", "/order", "/jobdetails/**").permitAll()
+		.antMatchers("/users/**").hasAnyAuthority("SITE_USERS", "SITE_ADMIN")
+		.antMatchers("/admin/**").hasAuthority("SITE_ADMIN")
 		.anyRequest().authenticated()
 		.and()
-		.formLogin()
-			.usernameParameter("userName")
-			.defaultSuccessUrl("/admin/home", true)
-			.loginPage("/login")
-			.failureUrl("/login?error=true")
-			.permitAll()
-		.and()
-		.logout()
-		.logoutUrl("/logout")
-		.invalidateHttpSession(true)
-		.logoutSuccessUrl("/login")
-		.deleteCookies("JSESSIONID")
-		.logoutSuccessHandler(logoutSuccessHandler())
-		.permitAll()
-		.and()
-		.rememberMe()
-		.and()
-		.logout().permitAll();
+		.csrf().disable().formLogin()
+		.loginPage("/login")
+		.failureUrl("/login?error=true")
+		.successHandler(successHandler)
+		.usernameParameter("userName")
+		.passwordParameter("password")
+	.and()
+	.logout()
+	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	.logoutSuccessUrl("/login").and()
+	.exceptionHandling()
+	.accessDeniedPage("/access-denied");
+		
 	}
 	
 	@Bean
@@ -76,17 +78,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	
 	@Bean
-	public DaoAuthenticationProvider authProvider() {
+	public DaoAuthenticationProvider authProvider() throws Exception {
 		
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
 		authenticationProvider.setPasswordEncoder(passwordEncoder());
 		authenticationProvider.setUserDetailsService(userDetailsService);
+		
 		return authenticationProvider;
 	}
 	
-	
 	@Override
-	protected void configure(AuthenticationManagerBuilder auth) {
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(authProvider());
 	}
 	

@@ -36,11 +36,6 @@ public class HomeController {
 	@Autowired
 	private JobCategoryService jobCategoryService;
 	
-	@RequestMapping("/home")
-	public String home() {
-		return "test";
-	}
-	
 	@RequestMapping("/login")
 	public String login() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -70,17 +65,25 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/admin/home")
-	public String Login(Model model) {
+	public String testController() {
+		System.out.println("Main home");
+		return "HEellooo";
 		
+	}
+	
+	@RequestMapping(value = "/admin/home", method = RequestMethod.GET)
+	public String loginAdmin(Model model) {
 		
+		System.out.println("From Admin Controller");
 		return "/admin/home";
 	}
 	
-	@RequestMapping("/user/index")
-	public String LoginUser(Model model) {
+	@RequestMapping("/users/index")
+	public String loginUser(Model model) {
 		
+		System.out.println("From User Controller");
 		
-		return "/user/index";
+		return "/users/index";
 	}
 	
 	@RequestMapping("/login/error")
