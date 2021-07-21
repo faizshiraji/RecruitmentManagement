@@ -15,6 +15,7 @@ import com.recruitmentmanagement.entities.JobCategory;
 import com.recruitmentmanagement.entities.JobCircular;
 import com.recruitmentmanagement.service.JobCategoryService;
 import com.recruitmentmanagement.service.JobCircularService;
+import com.recruitmentmanagement.service.UsersService;
 
 @Controller
 public class JobCircularController {
@@ -25,6 +26,8 @@ public class JobCircularController {
 	@Autowired
 	private JobCircularService jobCircularService;
 	
+	@Autowired
+	private UsersService usersService;
 	
 	@GetMapping("/jobdetails/{id}")
 	public String viewJobCircularDetailsInPbl(@PathVariable("id") Integer id, Model model) {
@@ -109,5 +112,12 @@ public class JobCircularController {
 		
 		return "/admin/viewjobcircularPage";
 		
+	}
+	
+	@GetMapping("/jobcircularApply/{id}")
+	public String applyJobCircular(@PathVariable("id") Integer id, Model model) {
+		
+		
+		return "/register";
 	}
 }
