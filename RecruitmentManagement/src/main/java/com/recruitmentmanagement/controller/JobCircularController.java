@@ -3,6 +3,9 @@ package com.recruitmentmanagement.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.recruitmentmanagement.entities.JobCategory;
 import com.recruitmentmanagement.entities.JobCircular;
+import com.recruitmentmanagement.entities.Users;
 import com.recruitmentmanagement.service.JobCategoryService;
 import com.recruitmentmanagement.service.JobCircularService;
 import com.recruitmentmanagement.service.UsersService;
@@ -28,6 +32,9 @@ public class JobCircularController {
 	
 	@Autowired
 	private UsersService usersService;
+	
+	@Autowired
+	ObjectFactory<HttpSession> httpSessionFactory;
 	
 	@GetMapping("/jobdetails/{id}")
 	public String viewJobCircularDetailsInPbl(@PathVariable("id") Integer id, Model model) {
@@ -117,7 +124,13 @@ public class JobCircularController {
 	@GetMapping("/jobcircularApply/{id}")
 	public String applyJobCircular(@PathVariable("id") Integer id, Model model) {
 		
+		HttpSession session = httpSessionFactory.getObject();
+		session.setAttribute("id", id);
 		
-		return "/register";
+		model.addAttribute("users", new Users());
+		
+		return "register";
 	}
+	
+	
 }
