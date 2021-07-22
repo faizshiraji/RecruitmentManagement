@@ -1,9 +1,10 @@
 (function($) {
   'use strict';
   $.validator.setDefaults({
-    submitHandler: function() {
-      alert("submitted!");
-    }
+    submitHandler:  function submiBtnClick(){
+                var formValid = document.forms["post-form"].checkValidity();
+                return formValid;
+            }
   });
   $(function() {
     // validate the comment form when it is submitted
@@ -28,11 +29,11 @@
         },
         password: {
           required: true,
-          minlength: 5
+          minlength: 8
         },
         confirm_password: {
           required: true,
-          minlength: 5,
+          minlength: 8,
           equalTo: "#password"
         },
         email: {
@@ -54,11 +55,11 @@
         },
         password: {
           required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long"
+          minlength: "Your password must be at least 8 characters long"
         },
         confirm_password: {
           required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long",
+          minlength: "Your password must be at least 8 characters long",
           equalTo: "Please enter the same password as above"
         },
         email: "Please enter a valid email address",

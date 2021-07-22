@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/samples/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Salt Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{/node_modules/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" th:href="@{/node_modules/font-awesome/css/font-awesome.min.css}" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/images/favicon.html}" />
+</head>
+
+<body class="sidebar-dark">
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+      <div class="row">
+        <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
+          <div class="card col-lg-4 mx-auto">
+            <div class="card-body px-5 py-5">
+              <h3 class="card-title text-left mb-3">Register</h3>
+              <h4 class="card-title text-right mb-3" th:text="${msg}"></h4>
+              
+              <form th:action="@{/process_registration}" th:object="${users}" method="post" class="cmxform" id="signupForm">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email" class="form-control" name="email" type="email" th:field="*{userName}">
+                </div>
+				<div class="form-group">
+                  <label for="password">Password</label>
+                  <input id="password" class="form-control" name="password" type="password" th:field="*{password}">
+                </div>
+                <div class="form-group">
+                  <label for="confirm_password">Confirm password</label>
+                  <input id="confirm_password" class="form-control" name="confirm_password" type="password">
+                </div>
+                <div class="form-group d-flex align-items-center justify-content-between">
+                  <div class="icheck-square">
+                    <input tabindex="1" type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                  </div>
+                  <a href="#" class="forgot-pass">Forgot password</a>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
+                </div>
+                <small class="text-center d-block mb-3">Already have an Account?<a th:href="@{/login}"> Sign In</a></small>
+                <small class="text-center d-block">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></small>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+      </div>
+      <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+  <script th:src="@{/node_modules/popper.js/dist/umd/popper.min.js}"></script>
+  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
+  <script th:src="@{/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js}"></script>
+  <script th:src="@{/node_modules/jquery-validation/dist/jquery.validate.min.js}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script th:src="@{/js/off-canvas.js}"></script>
+  <script th:src="@{/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/js/misc.js}"></script>
+  <script th:src="@{/js/settings.js}"></script>
+  <script th:src="@{/js/form-validation.js}"></script>
+  <!-- endinject -->
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/samples/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+</html>

@@ -129,7 +129,7 @@ public class JobCircularController {
 		
 		model.addAttribute("users", new Users());
 		
-		return "register";
+		return "candidates_reg";
 	}
 	
 	
