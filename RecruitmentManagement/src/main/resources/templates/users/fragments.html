@@ -33,6 +33,40 @@
         </div>
       </div>
     </nav>
+    
+    <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row" th:fragment="navbartop2">
+      <div class="text-center navbar-brand-wrapper">
+        <a class="navbar-brand brand-logo"><img th:src="@{/images/paywelllogo.png}"></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="btn-group d-none d-sm-block">
+        </div>
+      </div>
+    </nav>
+    	<div class="row row-offcanvas row-offcanvas-right">
+	       <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar" th:fragment="navsidebar">
+	          <ul class="nav">
+	            <li class="nav-item active" data-toggle="showMegaMenu">
+	              <a href="#" class="nav-link">User Profile</a>
+	              <div class="mega-menu container-fluid">
+	                <ul class="list-group">
+	                  <li class="nav-item nav-category">
+	                    <span class="nav-link">Profile</span>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" th:href="@{/users/userProfile}">My Profile</a>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" th:href="@{/logout}">Logout</a>
+	                  </li>
+	                </ul>
+	              </div>
+	            </li>
+	          </ul>
+	        </nav>
 </div>
 
         <footer class="footer" th:fragment="footer">
@@ -42,6 +76,7 @@
 	            </span>
 	          </div>
 	   </footer>
+<div th:fragment="script">
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
@@ -59,6 +94,7 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
+  </div>
 </body>
 
 

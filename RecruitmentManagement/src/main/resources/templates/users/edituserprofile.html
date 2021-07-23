@@ -3,180 +3,16 @@
 
 
 <!-- Mirrored from www.urbanui.com/salt/jquery/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:35 GMT -->
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Salt Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" th:href="@{/node_modules/mdi/css/materialdesignicons.min.css}">
-  <link rel="stylesheet" th:href="@{/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css}">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" th:href="@{/css/style.css}">
-  <!-- endinject -->
-  <link rel="shortcut icon" th:href="@{/images/favicon.html}" />
-</head>
+<head th:replace="/users/fragments.html :: header" />
 
 <body class="sample-page horizontal-menu">
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo"><img th:src="@{/images/paywelllogo.png}"></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-        <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="btn-group d-none d-sm-block">
-        </div>
-      </div>
-    </nav>
+   <nav th:replace="/users/fragments.html :: navbartop" />
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
     	<div class="row row-offcanvas row-offcanvas-right">
-	        <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar">
-	          <ul class="nav">
-	            <li class="nav-item active" data-toggle="showMegaMenu">
-	              <a href="#" class="nav-link">User Profile</a>
-	              <div class="mega-menu container-fluid">
-	                <ul class="list-group">
-	                  <li class="nav-item nav-category">
-	                    <span class="nav-link">Profile</span>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" th:href="@{/users/userProfile}">My Profile</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" th:href="@{/logout}">Logout</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </li>
-<!-- 
-				<li class="nav-item" data-toggle="showMegaMenu">
-	              <a href="#" class="nav-link">Sample Pages</a>
-	              <div class="mega-menu container-fluid">
-	                <ul class="list-group">
-	                  <li class="nav-item nav-category">
-	                    <span class="nav-link">Authentication</span>
-	                  </li>
-	                  <li class="nav-item">
-	                      <a class="nav-link" href="../samples/login.html">
-	                        Login
-	                      </a>
-	                  </li>
-	                  <li class="nav-item">
-	                      <a class="nav-link" href="../samples/login-2.html">
-	                        Login 2
-	                      </a>
-	                  </li>
-	                  <li class="nav-item">
-	                      <a class="nav-link" href="../samples/register.html">
-	                        Register
-	                      </a>
-	                  </li>
-	                  <li class="nav-item">
-	                      <a class="nav-link" href="../samples/register-2.html">
-	                        Register 2
-	                      </a>
-	                  </li>
-	                  <li class="nav-item">
-	                      <a class="nav-link" href="../samples/lock-screen.html">
-	                        Lockscreen
-	                      </a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </li>
-	            <li class="nav-item" data-toggle="showMegaMenu">
-	              <a href="#" class="nav-link">Data Reperesentation</a>
-	              <div class="mega-menu container-fluid">
-	                <ul class="list-group">
-	                  <li class="nav-item nav-category">
-	                    <span class="nav-link">Charts</span>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/chartJs-2.html">Chart js</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/flot-chart.html">Flot chart</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/c3.html">C3 chart</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/morris.html">Morris</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/google-charts.html">Google Chart</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/sparkline.html">Sparkline</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/rickshaw.html">Rikshaw</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../charts/justGage.html">Just Gage</a>
-	                  </li>
-	                </ul>
-	                <ul class="list-group">
-	                  <li class="nav-item nav-category">
-	                    <span class="nav-link">Tables</span>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../tables/bootstrap-table.html">Bootstrap Table</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../tables/advanced-table.html">Advanced Table</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../tables/js-grid.html">JS Grid</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../tables/sortable-table.html">Sortable Table</a>
-	                  </li>
-	                </ul>
-	                <ul class="list-group">
-	                  <li class="nav-item nav-category">
-	                    <span class="nav-link">Maps</span>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../maps/mapael.html">Mapeal</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../maps/vector-map.html">Vector Map</a>
-	                  </li>
-	                </ul>
-	                <ul class="list-group">
-	                  <li class="nav-item nav-category">
-	                    <span class="nav-link">Icons</span>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../icons/fontawsome.html">Font Awsome</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../icons/themify.html">Themify Icons</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../icons/simple-line-icon.html">simple Line Icons</a>
-	                  </li>
-	                  <li class="nav-item">
-	                    <a class="nav-link" href="../icons/flag-icons.html">Flag Icons</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </li>
- -->
-	            
-	            
-	          </ul>
-	        </nav>
-		        
+		<nav th:replace="/users/fragments.html :: navsidebar" />		        
 		 <div class="content-wrapper">
           <h1 class="page-title">User Profile</h1>
           <div class="row user-profile">
@@ -241,33 +77,11 @@
             
           </div>
         </div>
-		  	<footer class="footer">
-	          <div class="container-fluid clearfix">
-	            <span class="float-right">
-	                <a href="#">Salt Admin</a> &copy; 2017
-	            </span>
-	          </div>
-	        </footer>
+		  	<footer th:replace="/users/fragments.html :: footer" />
 	  	</div>
 	</div>	
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
-  <script th:src="@{/node_modules/popper.js/dist/umd/popper.min.js}"></script>
-  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
-  <script th:src="@{/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js}"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <script th:src="@{/js/off-canvas.js}"></script>
-  <script th:src="@{/js/hoverable-collapse.js}"></script>
-  <script th:src="@{/js/misc.js}"></script>
-  <script th:src="@{/js/settings.js}"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+ <div th:replace="/users/fragments.html :: script" />
 </body>
 
 
