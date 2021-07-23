@@ -24,5 +24,10 @@ public class TestController {
 		return "orders";
 	}
 	
+	@GetMapping("/basic-elements")
+	public String basiElement() {
+		return "basic-elements";
+	}
 
+	
 }

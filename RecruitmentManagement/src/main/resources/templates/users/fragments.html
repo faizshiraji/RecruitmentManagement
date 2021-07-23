@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Salt Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{/node_modules/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{/images/favicon.html}" />
+</head>
+
+<body class="sample-page horizontal-menu">
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    
+     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row" th:fragment="navbartop">
+      <div class="text-center navbar-brand-wrapper">
+        <a class="navbar-brand brand-logo"><img th:src="@{/images/paywelllogo.png}"></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="btn-group d-none d-sm-block">
+        </div>
+      </div>
+    </nav>
+</div>
+
+        <footer class="footer" th:fragment="footer">
+	          <div class="container-fluid clearfix">
+	            <span class="float-right">
+	                <a href="#">Salt Admin</a> &copy; 2017
+	            </span>
+	          </div>
+	   </footer>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+  <script th:src="@{/node_modules/popper.js/dist/umd/popper.min.js}"></script>
+  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
+  <script th:src="@{/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script th:src="@{/js/off-canvas.js}"></script>
+  <script th:src="@{/js/hoverable-collapse.js}"></script>
+  <script th:src="@{/js/misc.js}"></script>
+  <script th:src="@{/js/settings.js}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+</html>

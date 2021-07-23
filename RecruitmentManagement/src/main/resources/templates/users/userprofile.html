@@ -3,38 +3,13 @@
 
 
 <!-- Mirrored from www.urbanui.com/salt/jquery/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:35 GMT -->
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Salt Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" th:href="@{/node_modules/mdi/css/materialdesignicons.min.css}">
-  <link rel="stylesheet" th:href="@{/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css}">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" th:href="@{/css/style.css}">
-  <!-- endinject -->
-  <link rel="shortcut icon" th:href="@{/images/favicon.html}" />
-</head>
-
+<head th:replace="/users/fragments.html :: header" />
+  
 <body class="sample-page horizontal-menu">
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo"><img th:src="@{/images/paywelllogo.png}"></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-        <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="btn-group d-none d-sm-block">
-        </div>
-      </div>
-    </nav>
+    <nav th:replace="/users/fragments.html :: navbartop" />
+
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
     	<div class="row row-offcanvas row-offcanvas-right">
@@ -176,84 +151,38 @@
 	            
 	          </ul>
 	        </nav>
-	        <div class="content-wrapper">
-				<div class="page-footer">
-					<div class="wrapper" >
-					      <h3>“Whether you think you can or you think you can't, you're right.” — Henry Ford.</h3>
-					      <div class="form-group">
-					      </div>
-					      <a class="buy-now" th:href="@{\registration}">Register</a>
-					</div>
-				</div>        
 		        
-		        <div class="card">
-		            <div class="card-body">
-		              	<h1 class="card-title">We Are Hiring</h1>
-			            <div class="row grid-margin">
-			              <div class="col-12">
-			                <div class="alert alert-info" role="alert">
-			                  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-			                </div>
-			              </div>
-			            </div>
-		              	<div class="row">
-			                <div class="col-12">
-			                  <table id="order-listing" class="table table-striped" style="border-spacing: 0px;border-collapse: separate;width:100%;">
-			                    <thead>
-			                      <tr>
-			                          <th>No.</th>
-			                          <th>Post Name</th>
-			                          <th>Category</th>
-			                          <th>Salary</th>
-			                          <th>Create Date</th>
-			                          <th>Expire on</th>
-			                          <th>Status</th>
-			                          <th>Actions</th>
-			                      </tr>
-			                    </thead>
-			                    <tbody>
-			                      <tr>
-			                          <td>1</td>
-			                          <td>Software Engineer</td>
-			                          <td>Software Engineer</td>
-			                          <td>N/A</td>
-			                          <td>12 May 2017</td>
-			                          <td>12 June 2017</td>
-			                          <td>
-			                            <label class="badge badge-info">On hold</label>
-			                          </td>
-			                          <td>
-			                            <button class="btn btn-outline-primary">Apply</button>
-			                          </td>
-			                      </tr>
-			                <tr>
-			                          <td>2</td>
-			                          <td>System Engineer</td>
-			                          <td>System Engineer</td>
-			                          <td>35000</td>
-			                          <td>12 May 2017</td>
-			                          <td>12 June 2017</td>
-			                          <td>
-			                            <label class="badge badge-info">Active</label>
-			                          </td>
-			                          <td>
-			                            <button class="btn btn-outline-primary">Apply</button>
-			                          </td>
-			                      </tr>
-			                    </tbody>
-			                  </table>
-			    			</div>
-		   				</div>
-		  			</div>
-		  		</div>
-	  		</div>
-		  	<footer class="footer">
-	          <div class="container-fluid clearfix">
-	            <span class="float-right">
-	                <a href="#">Salt Admin</a> &copy; 2017
-	            </span>
-	          </div>
-	        </footer>
+		 <div class="content-wrapper">
+          <h1 class="page-title">User Profile</h1>
+          <div class="row user-profile">
+            <div class="col-lg-4 side-left">
+              <div class="card mb-4">
+                <div class="card-body avatar">
+                  <h2 class="card-title">Info</h2>
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <p class="name">Md. Faiz Shiraji</p>
+                  <p>faizshiraji@gmail.com</p>
+                  <p>+88 01 79163 1664</p>
+                </div>
+              </div>
+              <div class="card mb-4">
+                <div class="card-body overview">
+                  <ul class="achivements">
+                    <li><p>250000</p><p>Expect</p></li>
+                    <li><p>23</p><p>Position</p></li>
+                    <li><p>30%</p><p>Rating</p></li>
+                  </ul>
+                  <div class="wrapper about-user">
+                    <h2 class="card-title mt-4 mb-3">My Resume</h2>
+                    <p><a href="">My_Resume.pdf</a></p>
+                  </div>
+                  <a class="btn btn-outline-primary" th:href="@{/users/editprofile}">Edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+		  	<footer th:replace="/users/fragments.html :: footer" />
 	  	</div>
 	</div>	
   </div>

@@ -176,77 +176,71 @@
 	            
 	          </ul>
 	        </nav>
-	        <div class="content-wrapper">
-				<div class="page-footer">
-					<div class="wrapper" >
-					      <h3>“Whether you think you can or you think you can't, you're right.” — Henry Ford.</h3>
-					      <div class="form-group">
-					      </div>
-					      <a class="buy-now" th:href="@{\registration}">Register</a>
-					</div>
-				</div>        
 		        
-		        <div class="card">
-		            <div class="card-body">
-		              	<h1 class="card-title">We Are Hiring</h1>
-			            <div class="row grid-margin">
-			              <div class="col-12">
-			                <div class="alert alert-info" role="alert">
-			                  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+		 <div class="content-wrapper">
+          <h1 class="page-title">User Profile</h1>
+          <div class="row user-profile">
+            <div class="col-lg-8 side-right">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper">
+                    <hr>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                        <form>
+						<div class="card mb-4">
+			                <div class="card-body avatar form-group">
+			                  <img src="http://via.placeholder.com/120x120" alt="">
+			                  <label for="exampleInputFile2" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Change Picture</label>
+                                  <input type="file" class="form-control-file" id="exampleInputFile2" aria-describedby="fileHelp">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <small id="fileHelp" class="form-text text-muted">Please upload your image file size 120pxX120px and file should be only .jpg</small>
+                                    </div>
+                                  </div>
 			                </div>
-			              </div>
-			            </div>
-		              	<div class="row">
-			                <div class="col-12">
-			                  <table id="order-listing" class="table table-striped" style="border-spacing: 0px;border-collapse: separate;width:100%;">
-			                    <thead>
-			                      <tr>
-			                          <th>No.</th>
-			                          <th>Post Name</th>
-			                          <th>Category</th>
-			                          <th>Salary</th>
-			                          <th>Create Date</th>
-			                          <th>Expire on</th>
-			                          <th>Status</th>
-			                          <th>Actions</th>
-			                      </tr>
-			                    </thead>
-			                    <tbody>
-			                      <tr>
-			                          <td>1</td>
-			                          <td>Software Engineer</td>
-			                          <td>Software Engineer</td>
-			                          <td>N/A</td>
-			                          <td>12 May 2017</td>
-			                          <td>12 June 2017</td>
-			                          <td>
-			                            <label class="badge badge-info">On hold</label>
-			                          </td>
-			                          <td>
-			                            <button class="btn btn-outline-primary">Apply</button>
-			                          </td>
-			                      </tr>
-			                <tr>
-			                          <td>2</td>
-			                          <td>System Engineer</td>
-			                          <td>System Engineer</td>
-			                          <td>35000</td>
-			                          <td>12 May 2017</td>
-			                          <td>12 June 2017</td>
-			                          <td>
-			                            <label class="badge badge-info">Active</label>
-			                          </td>
-			                          <td>
-			                            <button class="btn btn-outline-primary">Apply</button>
-			                          </td>
-			                      </tr>
-			                    </tbody>
-			                  </table>
-			    			</div>
-		   				</div>
-		  			</div>
-		  		</div>
-	  		</div>
+			                
+             			</div>
+                          <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Change your Full Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="Change mobile number">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <label class="form-control">faizshiraji@gmail.com</label>
+                          </div>
+						  <div class="form-group">
+                            <label for="mobile">Expected Salary</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="Change mobile number">
+                          </div>
+                          <div class="form-group">
+                                  <label>Upload your resume</label>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <label for="exampleInputFile2" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Browse</label>
+                                      <input type="file" class="form-control-file" id="exampleInputFile2" aria-describedby="fileHelp">
+                                      <small id="fileHelp" class="form-text text-muted">Please upload your resume only light weighted pdf file.</small>
+                                    </div>
+                                  </div>
+                              </div>
+                          <div class="form-group mt-5">
+                            <button type="submit" class="btn btn-success mr-2">Update</button>
+                            <a class="btn btn-outline-danger" th:href="@{/users/userProfile}">Cancel</a>
+                          </div>
+                        </form>
+                      </div><!-- tab content ends -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
 		  	<footer class="footer">
 	          <div class="container-fluid clearfix">
 	            <span class="float-right">
