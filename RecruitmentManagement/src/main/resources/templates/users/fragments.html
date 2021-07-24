@@ -43,13 +43,75 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="btn-group d-none d-sm-block">
+        
         </div>
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-message-outline"></i>
+              <span class="count bg-danger">4</span>
+            </a>
+            <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-success">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">John Doe</p>
+                  <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
+                </div>
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-success">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">Leanne Jones</p>
+                  <p class="Sender-message">Can we schedule a call this afternoon?</p>
+                </div>
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-primary">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">Stella</p>
+                  <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
+                </div>
+              </a>
+              <a class="dropdown-item" href="#">
+                <div class="sender-img">
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <span class="badge badge-warning">&nbsp;</span>
+                </div>
+                <div class="sender">
+                  <p class="Sende-name">James Brown</p>
+                  <p class="Sender-message">Need the updates of the project at the end of the week.</p>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item view-all">View all</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
     	<div class="row row-offcanvas row-offcanvas-right">
 	       <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar" th:fragment="navsidebar">
 	          <ul class="nav">
-	            <li class="nav-item active" data-toggle="showMegaMenu">
+	          <li class="nav-item active" data-toggle="showMegaMenu">
+	              <a href="#" class="nav-link">Dashboard</a>
+	              <div class="mega-menu container-fluid">
+	                <ul class="list-group">
+	                  <li class="nav-item">
+	                    <a class="nav-link" th:href="@{/users/index}">My Dashboard</a>
+	                  </li>
+	                </ul>
+	              </div>
+	            </li>
+	            <li class="nav-item" data-toggle="showMegaMenu">
 	              <a href="#" class="nav-link">User Profile</a>
 	              <div class="mega-menu container-fluid">
 	                <ul class="list-group">

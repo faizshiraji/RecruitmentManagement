@@ -33,6 +33,9 @@ public class Users {
 	@OneToMany(mappedBy = "users")
 	List<Recruitment> recruitments;
 	
+	@OneToMany(mappedBy = "users")
+	List<Message> messages;
+	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "cp_id")
 	private CandidatesProfile candidatesProfile;
@@ -40,14 +43,14 @@ public class Users {
 	public Users() {
 	}
 
-	public Users(int idUsers, String userName, String password, UserRole userRole, List<Recruitment> recruitments,
-			CandidatesProfile candidatesProfile) {
+	public Users(String userName, String password, UserRole userRole, List<Recruitment> recruitments,
+			List<Message> messages, CandidatesProfile candidatesProfile) {
 		super();
-		this.idUsers = idUsers;
 		this.userName = userName;
 		this.password = password;
 		this.userRole = userRole;
 		this.recruitments = recruitments;
+		this.messages = messages;
 		this.candidatesProfile = candidatesProfile;
 	}
 
@@ -91,6 +94,14 @@ public class Users {
 		this.recruitments = recruitments;
 	}
 
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
+
 	public CandidatesProfile getCandidatesProfile() {
 		return candidatesProfile;
 	}
@@ -102,8 +113,11 @@ public class Users {
 	@Override
 	public String toString() {
 		return "Users [idUsers=" + idUsers + ", userName=" + userName + ", password=" + password + ", userRole="
-				+ userRole + ", recruitments=" + recruitments + ", candidatesProfile=" + candidatesProfile + "]";
+				+ userRole + ", recruitments=" + recruitments + ", messages=" + messages + ", candidatesProfile="
+				+ candidatesProfile + "]";
 	}
+
+	
 
 	
 }

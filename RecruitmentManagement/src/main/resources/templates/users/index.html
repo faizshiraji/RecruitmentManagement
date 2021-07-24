@@ -8,7 +8,7 @@
 <body class="sample-page horizontal-menu">
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <nav th:replace="/users/fragments.html :: navbartop" />
+    <nav th:replace="/users/fragments.html :: navbartop2" />
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
     	<div class="row row-offcanvas row-offcanvas-right">
@@ -25,67 +25,139 @@
 					</div>
 				</div>        
 		        
-		        <div class="card">
-		            <div class="card-body">
-		              	<h1 class="card-title">We Are Hiring</h1>
-			            <div class="row grid-margin">
-			              <div class="col-12">
-			                <div class="alert alert-info" role="alert">
-			                  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-			                </div>
-			              </div>
-			            </div>
-		              	<div class="row">
-			                <div class="col-12">
-			                  <table id="order-listing" class="table table-striped" style="border-spacing: 0px;border-collapse: separate;width:100%;">
+			        <div class="card">
+			            <div class="card-body">
+			              	<h1 class="card-title">We Are Hiring</h1>
+				            <div class="row grid-margin">
+				              <div class="col-12">
+				                <div class="alert alert-info" role="alert">
+				                  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+				                </div>
+				              </div>
+				            </div>
+			              	<div class="row">
+				                <div class="col-12">
+				                  <table id="order-listing" class="table table-striped" style="border-spacing: 0px;border-collapse: separate;width:100%;">
+				                    <thead>
+				                      <tr>
+				                          <th>No.</th>
+				                          <th>Post Name</th>
+				                          <th>Category</th>
+				                          <th>Salary</th>
+				                          <th>Create Date</th>
+				                          <th>Expire on</th>
+				                          <th>Status</th>
+				                          <th>Actions</th>
+				                      </tr>
+				                    </thead>
+				                    <tbody>
+				                      <tr>
+				                          <td>1</td>
+				                          <td>Software Engineer</td>
+				                          <td>Software Engineer</td>
+				                          <td>N/A</td>
+				                          <td>12 May 2017</td>
+				                          <td>12 June 2017</td>
+				                          <td>
+				                            <label class="badge badge-info">On hold</label>
+				                          </td>
+				                          <td>
+				                            <button class="btn btn-outline-primary">Apply</button>
+				                          </td>
+				                      </tr>
+				                <tr>
+				                          <td>2</td>
+				                          <td>System Engineer</td>
+				                          <td>System Engineer</td>
+				                          <td>35000</td>
+				                          <td>12 May 2017</td>
+				                          <td>12 June 2017</td>
+				                          <td>
+				                            <label class="badge badge-info">Active</label>
+				                          </td>
+				                          <td>
+				                            <button class="btn btn-outline-primary">Apply</button>
+				                          </td>
+				                      </tr>
+				                    </tbody>
+				                  </table>
+				    			</div>
+			   				</div>
+			  			</div>
+			  		</div>
+			  		<div>
+			  		<hr />
+			  		</div>
+				  	<div class="row">
+			            <div class="col-lg-6 mb-4">
+			              <div class="card">
+			                <div class="card-body">
+			                  <h2 class="card-title">Your Applied Job</h2>
+			                  <table class="table">
 			                    <thead>
-			                      <tr>
-			                          <th>No.</th>
-			                          <th>Post Name</th>
-			                          <th>Category</th>
-			                          <th>Salary</th>
-			                          <th>Create Date</th>
-			                          <th>Expire on</th>
-			                          <th>Status</th>
-			                          <th>Actions</th>
+			                      <tr class="">
+			                        <th>#</th>
+			                        <th>Post Name</th>
+			                        <th>Expire On</th>
+			                        <th>Status</th>
 			                      </tr>
 			                    </thead>
 			                    <tbody>
 			                      <tr>
-			                          <td>1</td>
-			                          <td>Software Engineer</td>
-			                          <td>Software Engineer</td>
-			                          <td>N/A</td>
-			                          <td>12 May 2017</td>
-			                          <td>12 June 2017</td>
-			                          <td>
-			                            <label class="badge badge-info">On hold</label>
-			                          </td>
-			                          <td>
-			                            <button class="btn btn-outline-primary">Apply</button>
-			                          </td>
+			                        <td>1</td>
+			                        <td>Software Engineer</td>
+			                        <td>12 May 2017</td>
+			                        <td>Vaiba</td>
 			                      </tr>
-			                <tr>
-			                          <td>2</td>
-			                          <td>System Engineer</td>
-			                          <td>System Engineer</td>
-			                          <td>35000</td>
-			                          <td>12 May 2017</td>
-			                          <td>12 June 2017</td>
-			                          <td>
-			                            <label class="badge badge-info">Active</label>
-			                          </td>
-			                          <td>
-			                            <button class="btn btn-outline-primary">Apply</button>
-			                          </td>
+			                      <tr>
+			                        <td>2</td>
+			                        <td>Sr. Software Engineer</td>
+			                        <td>13 May 2017</td>
+			                        <td>Written</td>
+			                      <tr>
+			                        <td>3</td>
+			                        <td>Database Administrator</td>
+			                        <td>14 May 2017</td>
+			                        <td>Vaiba</td>
 			                      </tr>
 			                    </tbody>
 			                  </table>
-			    			</div>
-		   				</div>
-		  			</div>
-		  		</div>
-	  		</div>
+			                </div>
+			              </div>
+			            </div>
+			            <div class="col-lg-6 mb-4">
+			              <div class="card">
+			                <div class="card-body">
+			                  <h2 class="card-title">Messages</h2>
+			                  <table class="table table-striped">
+			                    <thead>
+			                      <tr class="">
+			                        <th>#</th>
+			                        <th>Subject</th>
+			                        <th>Message</th>
+			                        <th>Time</th>
+			                      </tr>
+			                    </thead>
+			                    <tbody>
+			                      <tr>
+			                        <td>1</td>
+			                        <td>Application for post "Database Administrator"</td>
+			                        <td>You are selected for this post. Please attend your vaiba exam on office premisses at 25 july 2018 11:00 AM</td>
+			                        <td>14 May 2017 11:00 AM</td>
+			                      </tr>
+			                      <tr>
+			                        <td>1</td>
+			                        <td>Application for post "Sr. Software Engineer"</td>
+			                        <td>Thank you so much for your online MCQ test. Your score is 25 out of 50. You are on the waiting list. We will notify you if any decision is made about you.</td>
+			                        <td>12 May 2017 11:00 AM</td>
+			                      </tr>
+			                    </tbody>
+			                  </table>
+			                </div>
+			              </div>
+			            </div>
+			          </div>
+	  			</div>
 		  	<footer th:replace="/users/fragments.html :: footer" />
 	  	</div>
 	</div>	
