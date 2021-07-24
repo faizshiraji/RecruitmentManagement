@@ -1,6 +1,5 @@
 package com.recruitmentmanagement.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,9 +30,8 @@ public class Users {
 	@JoinColumn(name = "iduser_role")
 	private UserRole userRole;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_users")
-	List<Recruitment> recruitments = new ArrayList<>();
+	@OneToMany(mappedBy = "users")
+	List<Recruitment> recruitments;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "cp_id")

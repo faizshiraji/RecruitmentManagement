@@ -56,7 +56,7 @@ public class JobCircular {
 	@JoinColumn(name = "id_job_category")
 	private JobCategory jobCategory;
 
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "jobCircular")
 	private Recruitment recruitment;
 	
 	public JobCircular() {

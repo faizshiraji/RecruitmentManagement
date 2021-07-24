@@ -25,6 +25,7 @@ public class Examination {
 	private String refExamination;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "cp_id")
 	private CandidatesProfile candidatesProfile;
 	private int examMark;
 	private int resultMark;

@@ -1,6 +1,5 @@
 package com.recruitmentmanagement.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,11 +30,11 @@ public class CandidatesProfile {
 	private String cv;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_recruitment")
 	private Recruitment recruitment;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "candidates_profile_id")
-	List<Examination> examination = new ArrayList<>();
+	@OneToMany(mappedBy = "candidatesProfile")
+	List<Examination> examination;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "candidatesProfile")
 	private Users users;

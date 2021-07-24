@@ -1,6 +1,5 @@
 package com.recruitmentmanagement.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -26,19 +25,18 @@ public class Recruitment {
 	private int status;
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_users")
 	private Users users;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "job_circular_id")
 	private JobCircular jobCircular;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "recruitment_id")
-	List<RecruitmentStatus> recruitmentStatus = new ArrayList<>();
+	@OneToMany(mappedBy = "recruitment")
+	List<RecruitmentStatus> recruitmentStatus;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "recruitment_id")
-	List<CandidatesProfile> candidatesProfiles = new ArrayList<>();
+	@OneToMany(mappedBy = "recruitment" )
+	List<CandidatesProfile> candidatesProfiles;
 	
 	public Recruitment() {
 	}
