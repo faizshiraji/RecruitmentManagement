@@ -25,8 +25,7 @@ public class CandidatesController {
 	@RequestMapping("/users/index")
 	public String loginUser(Model model) {
 		
-		System.out.println("From User Controller");
-		
+		model.addAttribute("buttonActive", "index");
 		return "/users/index";
 	}
 	
@@ -64,15 +63,37 @@ public class CandidatesController {
 	}
 	
 	@RequestMapping("/users/userProfile")
-	public String userProfile() {
+	public String userProfile(Model model) {
+		model.addAttribute("buttonActive", "userProfile");
 		return "/users/userprofile";
 		
 	}
 	
 	@RequestMapping("/users/editprofile")
-	public String editUserProfile() {
+	public String editUserProfile(Model model) {
+		model.addAttribute("buttonActive", "userProfile");
 		return "/users/edituserprofile";
 		
 	}
 	
+	@RequestMapping("/users/jobcircularApplied")
+	public String jobcircularApplied(Model model) {
+		model.addAttribute("buttonActive", "jobcircularApplied");
+		return "/users/jobcircular_applied";
+		
+	}
+	
+	@RequestMapping("/users/usersExams")
+	public String usersExams(Model model) {
+		model.addAttribute("buttonActive", "jobcircularApplied");
+		return "/users/users_exams";
+		
+	}
+	
+	@RequestMapping("/users/usersScoreCard")
+	public String usersScoreCard(Model model) {
+		model.addAttribute("buttonActive", "jobcircularApplied");
+		return "/users/users_scorecard";
+		
+	}
 }

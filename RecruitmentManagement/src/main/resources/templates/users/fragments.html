@@ -101,7 +101,7 @@
     	<div class="row row-offcanvas row-offcanvas-right">
 	       <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar" th:fragment="navsidebar">
 	          <ul class="nav">
-	          <li class="nav-item active" data-toggle="showMegaMenu">
+	          <li th:class="${buttonActive == 'index'} ? 'nav-item active' : 'nav-item'" data-toggle="showMegaMenu">
 	              <a href="#" class="nav-link">Dashboard</a>
 	              <div class="mega-menu container-fluid">
 	                <ul class="list-group">
@@ -111,7 +111,7 @@
 	                </ul>
 	              </div>
 	            </li>
-	            <li class="nav-item" data-toggle="showMegaMenu">
+	            <li th:class="${buttonActive == 'userProfile'} ? 'nav-item active' : 'nav-item'" data-toggle="showMegaMenu">
 	              <a href="#" class="nav-link">User Profile</a>
 	              <div class="mega-menu container-fluid">
 	                <ul class="list-group">
@@ -127,7 +127,7 @@
 	                </ul>
 	              </div>
 	            </li>
-	            <li class="nav-item" data-toggle="showMegaMenu">
+	            <li th:class="${buttonActive == 'jobcircularApplied'} ? 'nav-item active' : 'nav-item'" data-toggle="showMegaMenu">
 	              <a href="#" class="nav-link">Job Applied</a>
 	              <div class="mega-menu container-fluid">
 	                <ul class="list-group">
@@ -135,16 +135,16 @@
 	                    <span class="nav-link">Job Applied</span>
 	                  </li>
 	                  <li class="nav-item">
-	                    <a class="nav-link">Job Applied</a>
+	                    <a class="nav-link" th:href="@{/users/jobcircularApplied}">Job Applied</a>
 	                  </li>
 	                  <li class="nav-item nav-category">
 	                    <span class="nav-link">Exams</span>
 	                  </li>
 	                  <li class="nav-item">
-	                    <a class="nav-link">My Exams</a>
+	                    <a class="nav-link" th:href="@{/users/usersExams}">My Exams</a>
 	                  </li>
 	                  <li class="nav-item">
-	                    <a class="nav-link">My Scores</a>
+	                    <a class="nav-link" th:href="@{/users/usersScoreCard}">My Scores</a>
 	                  </li>
 	                </ul>
 	              </div>

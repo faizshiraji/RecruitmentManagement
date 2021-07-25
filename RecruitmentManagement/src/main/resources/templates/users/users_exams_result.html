@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:35 GMT -->
+<head th:replace="/users/fragments.html :: header" />
+  
+<body class="sample-page horizontal-menu">
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav th:replace="/users/fragments.html :: navbartop" />
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+    	<div class="row row-offcanvas row-offcanvas-right">
+		<nav th:replace="/users/fragments.html :: navsidebar" />		        
+		 <div class="content-wrapper">
+          <h1 class="page-title">User Profile</h1>
+          <div class="row user-profile">
+            <div class="col-lg-4 side-left">
+              <div class="card mb-4">
+                <div class="card-body avatar">
+                  <h2 class="card-title">Info</h2>
+                  <img src="http://via.placeholder.com/47x47" alt="">
+                  <p class="name">Md. Faiz Shiraji</p>
+                  <p>faizshiraji@gmail.com</p>
+                  <p>+88 01 79163 1664</p>
+                </div>
+              </div>
+              <div class="card mb-4">
+                <div class="card-body overview">
+                  <ul class="achivements">
+                    <li><p>250000</p><p>Expect</p></li>
+                    <li><p>23</p><p>Position</p></li>
+                    <li><p>30%</p><p>Rating</p></li>
+                  </ul>
+                  <div class="wrapper about-user">
+                    <h2 class="card-title mt-4 mb-3">My Resume</h2>
+                    <p><a href="">My_Resume.pdf</a></p>
+                  </div>
+                  <a class="btn btn-outline-primary" th:href="@{/users/editprofile}">Edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+		  	<footer th:replace="/users/fragments.html :: footer" />
+	  	</div>
+	</div>	
+  </div>
+ <div th:replace="/users/fragments.html :: script" />
+</body>
+
+
+
+<!-- Mirrored from www.urbanui.com/salt/jquery/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:33:56 GMT -->
+</html>
